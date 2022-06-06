@@ -1,10 +1,18 @@
-
-const ItemListContainer = () => {
-    return (
-        <h1>
-            Bienvenidos a Bmw Mundo!
-        </h1>
-    )
+import React from "react"
+// const ItemListContainer = () => {
+//     return (
+//         <h1>
+//             Bienvenidos a Bmw Mundo!
+//         </h1>
+//     )
+// }
+function ItemListContainer({texto}) {
+    return ( 
+    <div >
+        {texto}
+    </div>
+        
+    );
 }
 
   export default ItemListContainer

@@ -11,7 +11,10 @@ const App = () => {
     <div className="App">
 
         <NavBar/>
-        <ItemListContainer/>
+        <ItemListContainer texto={"Hola bienvenidos"}/>
+        <x/>
+
+        
 
     </div>
   );
