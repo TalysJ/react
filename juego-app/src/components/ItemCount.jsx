@@ -10,21 +10,6 @@ function ItemCount({ initial, stock, onAdd }) {
     setCount(count + 1);
   };
 
-  useEffect(() => {
-    console.log("render");
-    if (count === 1) {
-      alert("has agregado 1 unidad");
-    } else if (count === 2) {
-      alert("has agregado 2 unidad");
-    } else if (count === 3) {
-      alert("has agregado 3 unidad");
-    } else if (count === 4) {
-      alert("has agregado 4 unidad");
-    } else {
-      alert("has agregado el maximo stock disponible 5 unidades");
-    }
-  });
-
   return (
     <>
       <Button

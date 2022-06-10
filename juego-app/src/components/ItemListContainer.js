@@ -1,14 +1,24 @@
-import React from "react"
-// const ItemListContainer = () => {
-//     return (
-//         <h1>
-//             Bienvenidos a Bmw Mundo!
-//         </h1>
-//     )
-// }
+import React, { useEffect, useState } from "react"
+import ItemList from "./ItemList"
+
+// const [Personajes, setPersonajes] = useState([])
 function ItemListContainer({texto}) {
+
+  const [Personajes, setPersonajes] = useState([])
+
+    useEffect(() => {
+      fetch("https://pokeapi.co/api/v2/")
+        .then(res => res.json())
+        .catch(error => console.error("Error:", error))
+        .then(res => setPersonajes(res.results))
+
+    }, [])
+
+    console.log(Personajes)
+
     return ( 
     <div >
+      <ItemList Personajes={Personajes}/>
         {texto}
     </div>
         
