@@ -1,25 +1,26 @@
-import React from "react";
-import { Button, Card } from "react-bootstrap";
+import React from 'react'
+import { Button, Card } from 'react-bootstrap';
 
-const Item = ({personaje}) => {
+const Item = ({producto})=>{
+    const {image,title,description,price}=producto
+    
+return (
 
-    const {name, image, species, status} = personaje
-
-    return  (
-        <div>
-            <Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src={image} />
-  <Card.Body>
-    <Card.Title>{name}</Card.Title>
+    <Card className='Card' >
+    <Card.Img variant="top" src={image} />
+    <Card.Body>
+    <Card.Title>{title}</Card.Title>
     <Card.Text>
-        Especie: {species}
-        Estado {status}
+        {description}
     </Card.Text>
-    <Button variant="primary">Ver mas</Button>
-  </Card.Body>
-</Card>
-        </div>
-    )
+    <Card.Text className='text'>
+    $ {price}
+    </Card.Text>
+    <Button  className='btn btn-dark' variant="primary">ver detalles</Button>
+    </Card.Body>
+    </Card>
+    
+)
 }
 
-export default Item
+export default Item;

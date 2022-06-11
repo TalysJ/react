@@ -1,58 +1,50 @@
 import React, { useEffect, useState } from "react"
 import ItemList from "./ItemList"
+import images from "../assets/images";
 
-// const [Personajes, setPersonajes] = useState([])
-function ItemListContainer({texto}) {
+function ItemListContainer() {
 
-  const [Personajes, setPersonajes] = useState([])
 
-    useEffect(() => {
-      fetch("https://pokeapi.co/api/v2/")
-        .then(res => res.json())
-        .catch(error => console.error("Error:", error))
-        .then(res => setPersonajes(res.results))
+  const[loading,setLoanding]=useState(true);
+  const[error,seterror]=useState(false);
+  const[producto,setproducto]=useState([]);
+  useEffect(() => {
+      setproducto([]);
+      setLoanding(true);
+      seterror(error); 
+  const articulos = new Promise((res,)=>{
+          setTimeout(()=>{
 
-    }, [])
+            res([{category:"Motores", id:'1', title:'bmw',  description:'modelos',  price:60000,  image:(images.img1) },])
 
-    console.log(Personajes)
+          },2000);
+        });
+          articulos
+          .then((result)=>{
+              setproducto(result);
+            
+            })
+            .catch((error)=>{
+              seterror(error);
+              
+            })
+            .finally(()=>{
+                setLoanding(false);
+            });
+      }, []);
 
-    return ( 
-    <div >
-      <ItemList Personajes={Personajes}/>
-        {texto}
-    </div>
+      return ( 
+        <>
+    <div > {loading && 'loding..'}</div>
+    <div > {error && 'hubo error en el pago'}</div>
+
+    <div>
+ <ItemList producto={producto} />
+ </div>
+    
+    </>
+);
+    
         
-    );
-}
-
-  export default ItemListContainer
-
-
-//   let = stock [
-//     {
-//         id: 
-//     }
-// ]
-
-// const ItemListContainer = () => {
-
-// }
-
-// ]
-//   const getFetch= () => {
-//     return new Promise ((resolve, reject) => {
-//       setTimeout (()=>{
-//         resolve(data)
-//       },3000)
-//     }
-//     )
-//   }
-  
-//   const ItemListContainer = () => {
-//     getFetch()
-//     .then((resp)=>{
-//       console.log(resp)
-//     })
-//     .catch (err => console.log(err))
-//     .finally (()=> console.log())
-//   }
+};
+export default ItemListContainer;

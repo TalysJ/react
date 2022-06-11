@@ -11,3 +11,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.map{
+  display: flex;
+  padding-top: 20px;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Card{
+  display: block;
+  width: 15rem;
+  margin: auto;
+  height: auto;
+  border-radius: 5px;
+  padding: auto;
+  
+}
