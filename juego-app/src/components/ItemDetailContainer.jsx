@@ -1,6 +1,6 @@
 import React,{useEffect, useState} from 'react';
 import ItemDetail from './ItemDetail';
-import images from '../assets';
+import images from './ItemListContainer';
 import {useParams} from 'react-router-dom';
 
 

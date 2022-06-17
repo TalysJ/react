@@ -18,7 +18,6 @@ let productosMock=[
 function ItemListContainer() {
 
   const{id}= useParams();
-   
   const[loading,setLoanding]=useState(true);
   const[error,seterror]=useState(false);
   const[producto,setproducto]=useState([]);
@@ -26,29 +25,29 @@ function ItemListContainer() {
       setproducto([]);
       setLoanding(true);
       seterror(false); 
-   const proms = new Promise((res)=>{
+  const proms = new Promise((res)=>{
           setTimeout(()=>{
       (!id) ?  res (productosMock) : res(productosMock.filter(item=>item.category===id))  
-   },2000);
+  },2000);
           
       });
-     
-     proms
+    
+    proms
       .then((result)=>{
           setproducto(result);
           
-       })
-       .catch((error)=>{
+      })
+      .catch((error)=>{
           seterror(true);
           console.log(error);
           
-       })
-       .finally(()=>{
-           setLoanding(false);
-       });
+      })
+      .finally(()=>{
+          setLoanding(false);
+      });
   }, [id]);
   
- 
+
 return ( 
       <>
   <div > {loading && 'loding..'}</div>

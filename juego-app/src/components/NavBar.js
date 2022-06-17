@@ -1,35 +1,33 @@
-import React from "react";
+import { Nav, Navbar } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import CartWidget from "./CartWidget";
-import ItemListContainer from "./ItemListContainer";
+
 
 const NavBar = () => {
     return (
         <div>
-            <nav className="navbar navbar-expand-lg bg-light">
+<Nav className="navbar navbar-expand-lg bg-light">
   <div className="container-fluid">
-    <a className="navbar-brand" href="#">Mundo Bmw</a>
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
-    </button>
+    <Navbar.Brand to="/">
+        Mundo Bmw
+    </Navbar.Brand>
     <div className="collapse navbar-collapse" id="navbarNav">
-      <ul className="navbar-nav">
-        <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#"></a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">Repuestos</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link disabled">Disabled</a>
-        </li>
+        <Link to="/" className="nav-item">
+          Home
+        </Link>
+        <Link to="/category/motores" className="nav-item">
+          motores
+        </Link>
+        <Link to="/category/transmisiones" className="nav-item">
+          transmisiones
+        </Link>
+        <Link to="/category/turbos" className="nav-item">
+          turbos
+        </Link>
         <CartWidget/>
-      </ul>
     </div>
   </div>
-</nav>
+</Nav>
         </div>
     )
 }
