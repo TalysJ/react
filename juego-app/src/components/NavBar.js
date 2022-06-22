@@ -11,24 +11,24 @@ const NavBar = () => {
     <Navbar.Brand to="/">
         Mundo Bmw
     </Navbar.Brand>
-    <div className="collapse navbar-collapse" id="navbarNav">
-        <Link to="/" className="nav-item">
+    <div className="collapse navbar-collapse"  id="navbarNav">
+        <Nav.Link to="/" className="nav-item text-dark">
           Home
-        </Link>
-        <Link to="/category/motores" className="nav-item">
+        </Nav.Link>
+        <Nav.Link to="/category/motores" className="nav-item text-dark">
           motores
-        </Link>
-        <Link to="/category/transmisiones" className="nav-item">
+        </Nav.Link>
+        <Nav.Link to="/category/transmisiones" className="nav-item text-dark">
           transmisiones
-        </Link>
-        <Link to="/category/turbos" className="nav-item">
+        </Nav.Link>
+        <Nav.Link to="/category/turbos" className="nav-item text-dark">
           turbos
-        </Link>
+        </Nav.Link>
         <CartWidget/>
     </div>
   </div>
 </Nav>
-        </div>
+      </div>
     )
 }
 
