@@ -9,6 +9,7 @@ function ItemDetail ({producto}) {
   const onAdd = () =>{
     setAdd(!add)
   }
+  
 
   return (
     <>
@@ -28,7 +29,7 @@ function ItemDetail ({producto}) {
               add ?
               <div className='meta'>Se agrego tu articulo!</div>
               :
-              <ItemCount producto={producto} stock={10} initial={1} onAdd={onAdd} />
+              <ItemCount stock={10} initial={1} onAdd={onAdd} />
             }
           </div>
           <br/>
