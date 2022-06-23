@@ -30,7 +30,7 @@ function ItemDetailContainer() {
 
     const proms = new Promise((res)=>{
             setTimeout(()=>{
-                res(productosMock[id-1]); 
+                res(productosMock[id]); 
     },2000);
             
         });
