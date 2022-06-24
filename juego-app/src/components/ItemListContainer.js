@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react"
-import ItemList from "./ItemList"
+import React, { useEffect, useState} from "react";
+import ItemList from "./ItemList";
 import {useParams} from 'react-router-dom';
+
 
 let productosMock=[ 
   {category:"motores", id:'0', title:'MOTOR S85',  description:'Bmw M5 E60 V10 2005',  price:3000, image:'/assets/img/motor-s85-bmw-v10.jpg'},
@@ -16,10 +17,12 @@ let productosMock=[
 
 function ItemListContainer() {
 
+  
   const{id}= useParams();
   const[loading,setLoanding]=useState(true);
   const[error,seterror]=useState(false);
   const[producto,setproducto]=useState([]);
+  
   useEffect(() => {
       setproducto([]);
       setLoanding(true);
@@ -53,7 +56,7 @@ return (
   <div > {error && 'hubo error en el pago'}</div>
 
   <div>
-<ItemList producto={producto} />
+  <ItemList producto={producto} />
 </div>
   
   </>

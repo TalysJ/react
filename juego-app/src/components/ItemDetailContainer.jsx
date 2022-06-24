@@ -3,6 +3,7 @@ import ItemDetail from './ItemDetail';
 import {useParams} from 'react-router-dom';
 
 
+
 let productosMock=[ 
     {category:"motores", id:'0', title:'MOTOR S85',  description:'Bmw M5 E60 V10 2005',  price:3000, image:'/assets/img/motor-s85-bmw-v10.jpg'},
     {category:"motores", id:'1', title:'MOTOR S50', description:'Bmw M3 E36 1991', price:2000, image:'/assets/img/motor-S50B32-E36.jpg'},

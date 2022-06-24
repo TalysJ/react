@@ -1,13 +1,17 @@
-import React, { useState } from 'react'
+import { React, useState, useEffect, useContext } from 'react'
 import { Button, Card } from 'react-bootstrap';
 import ItemCount from './ItemCount';
 import { Link } from "react-router-dom";
+import { CartContext } from './CartContext';
 
 function ItemDetail ({producto}) {
-  const {image, title, description, price}= producto
-  const [add, setAdd] = useState(false)
-  const onAdd = () =>{
-    setAdd(!add)
+  const {image, title, description, price}= producto;
+  const [add, setAdd] = useState(false);
+  const {AddToCart} = useContext(CartContext);
+  
+  const onAdd = (cantidad) =>{
+    // setAdd(!add)
+    AddToCart(producto, cantidad)
   }
   
 
