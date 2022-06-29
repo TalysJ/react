@@ -6,7 +6,7 @@ function ItemCount({ initial, stock, onAdd }) {
   const decrease = () => {
     setCount(count - 1);
   };
-  const increase = () => {
+  const increase = () => {  
     setCount(count + 1);
   };
 
@@ -31,7 +31,6 @@ function ItemCount({ initial, stock, onAdd }) {
       </Button>
 
       <br />
-
       <Button disabled={stock <= 0} onClick={() => onAdd(count)}>
         agregar al carrito
       </Button>

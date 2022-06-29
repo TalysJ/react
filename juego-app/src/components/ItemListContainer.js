@@ -29,7 +29,7 @@ function ItemListContainer() {
       seterror(false); 
   const proms = new Promise((res)=>{
           setTimeout(()=>{
-      (!id) ?  res (productosMock) : res(productosMock.find(item=>item.category===id))  
+      (!id) ?  res (productosMock) : res(productosMock.filter(item=>item.category===id))  
   },2000);
           
       });

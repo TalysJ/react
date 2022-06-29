@@ -4,7 +4,7 @@ import CartItem from './CartItem'
 
 const Cart = () => {
 
-    const {producto} = useContext {CartContext};
+    const {producto} = useContext [CartContext]
 
   return (
     <div>

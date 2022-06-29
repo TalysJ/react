@@ -1,5 +1,5 @@
 import { Nav, Navbar } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import CartWidget from "./CartWidget";
 
 
@@ -12,18 +12,18 @@ const NavBar = () => {
         Mundo Bmw
     </Navbar.Brand>
     <div className="collapse navbar-collapse"  id="navbarNav">
-        <Nav.Link to="/" className="nav-item text-dark">
+        <NavLink to="/" className="nav-item text-dark">
           Home
-        </Nav.Link>
-        <Nav.Link to="/category/motores" className="nav-item text-dark">
+        </NavLink>
+        <NavLink to="/category/motores" className="nav-item text-dark">
           motores
-        </Nav.Link>
-        <Nav.Link to="/category/transmisiones" className="nav-item text-dark">
+        </NavLink>
+        <NavLink to="/category/transmisiones" className="nav-item text-dark">
           transmisiones
-        </Nav.Link>
-        <Nav.Link to="/category/turbos" className="nav-item text-dark">
+        </NavLink>
+        <NavLink to="/category/turbos" className="nav-item text-dark">
           turbos
-        </Nav.Link>
+        </NavLink>
         <CartWidget/>
     </div>
   </div>
