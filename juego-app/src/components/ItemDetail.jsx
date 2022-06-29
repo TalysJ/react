@@ -1,7 +1,7 @@
 import { React, useState, useEffect, useContext } from 'react'
 import { Button, Card } from 'react-bootstrap';
 import ItemCount from './ItemCount';
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { CartContext } from './CartContext';
 
 function ItemDetail ({producto}) {
@@ -10,7 +10,7 @@ function ItemDetail ({producto}) {
   const {AddToCart} = useContext(CartContext);
   
   const onAdd = (cantidad) =>{
-    // setAdd(!add)
+    setAdd(true)
     AddToCart(producto, cantidad)
   }
   
@@ -31,15 +31,17 @@ function ItemDetail ({producto}) {
           <div className='extra-content'>
             {
               add ?
-              <div className='meta'>Se agrego tu articulo!</div>
+              <NavLink to={`/cart`}>
+              <Button className="btn btn-dark" variant="primary">
+                Finalizar compra
+              </Button>
+            </NavLink>
               :
               <ItemCount stock={10} initial={1} onAdd={onAdd} />
             }
           </div>
           <br/>
-          <Button className='ui bottom button green'>
-            Finalizar compra
-          </Button>
+
         </Card.Body>
       </Card>
     </>

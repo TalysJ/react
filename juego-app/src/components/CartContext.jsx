@@ -4,23 +4,28 @@ export const CartContext = createContext()
 
 const CartContextProvider = ({children}) => {
 
-    const [producto, setproducto] = useState([]);
+    const [productos, setproductos] = useState([]);
 
     const AddToCart = (producto, cantidad) =>{
       if (IsInCart(producto.id)){
+        const index = productos.map(e => e.id).indexOf(producto.id);
+        productos[index].cantidad+=cantidad
+        setproductos(productos)
         alert("El producto ya esta en el carrito");
       }else{
-        setproducto([...setproducto, {producto, cantidad}]);
+        setproductos([...productos, {...producto, cantidad}]);
         alert("se agrego el producto");
       }
     }
+    console.log(productos);
 
     const IsInCart = (id) => {
-      return producto && producto.some((i) => i.producto.id === id);
+      console.log(id)
+      return productos.some((producto) => producto.id === id);
     };
 
   return (
-    <CartContext.Provider value = {{AddToCart, producto}}>
+    <CartContext.Provider value = {{AddToCart, productos}}>
         {children}
     </CartContext.Provider>
   )
