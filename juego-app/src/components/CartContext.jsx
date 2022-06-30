@@ -23,9 +23,13 @@ const CartContextProvider = ({children}) => {
       console.log(id)
       return productos.some((producto) => producto.id === id);
     };
+    const clearItems = () => {
+      setproductos([]);
+      alert("Se vacio tu carrito");
+    };
 
   return (
-    <CartContext.Provider value = {{AddToCart, productos}}>
+    <CartContext.Provider value = {{AddToCart, clearItems, productos}}>
         {children}
     </CartContext.Provider>
   )

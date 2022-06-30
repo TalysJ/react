@@ -8,6 +8,7 @@ function ItemDetail ({producto}) {
   const {image, title, description, price}= producto;
   const [add, setAdd] = useState(false);
   const {AddToCart} = useContext(CartContext);
+
   
   const onAdd = (cantidad) =>{
     setAdd(true)
